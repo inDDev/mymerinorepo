@@ -1,0 +1,2 @@
+class DesignPage < ApplicationRecord
+end
