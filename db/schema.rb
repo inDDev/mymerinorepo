@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_181108) do
+ActiveRecord::Schema.define(version: 2018_10_27_210259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,43 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_27_181108) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blocks", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.string "position"
-    t.string "display"
-    t.boolean "show_title"
-    t.string "class_suffix"
-    t.boolean "is_published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pages", force: :cascade do |t|
-    t.string "title"
-    t.integer "section_id"
-    t.text "body"
-    t.integer "order"
-    t.string "is_published"
-    t.boolean "menu_display"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sections", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
