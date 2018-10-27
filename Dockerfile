@@ -15,4 +15,4 @@ COPY Gemfile* ./
 RUN bundle install
 COPY . . 
 
-CMD rails server -b 0.0.0.0
+CMD /bin/sh -c "rm -f /usr/src/app/tmp/pids/server.pid && rails server -b 0.0.0.0"
