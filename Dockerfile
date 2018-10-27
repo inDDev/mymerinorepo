@@ -1,5 +1,6 @@
 FROM ruby:2.5.1
 
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get update -yqq \
   && apt-get install -yqq --no-install-recommends \
    	libgmp-dev \
