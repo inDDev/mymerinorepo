@@ -6,3 +6,80 @@
 	height: 100px !important;
   	width: auto;	
 }
+
+#slideBox {
+	width: fit-content;
+	max-height: 720px;
+	overflow: hidden;
+	margin: 1% auto;
+	position: relative;
+	top: 1em;
+	background-color: darkgray;
+	border-radius: .3em;
+}	
+
+video {
+	background-color: none;
+}
+
+#slideBox .slick-vertical .slick-slide {
+	border: none;
+}
+
+.sliderSidebar {
+	width: 200px;
+	height: 500px;
+	margin-right: 7px;
+	float: left;
+}
+
+#slideBox .slick-vertical .slick-slide {
+	border: none;
+}
+
+
+.sliderMain {
+	width: 900px;
+	height: 500px;
+	position: relative;
+	float: left;
+}
+
+.slick-arrow {
+    font-size: 0;
+    position: absolute;
+    color: #34495E;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+    top: 15%;
+    box-shadow: none;
+    padding: 15px 12px;
+}
+.slick-prev {
+    left: -15px;
+    text-align: left;
+}
+.slick-prev:after {
+    content: "\f16c";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.slick-next {
+    right: -15px;
+    text-align: right;
+}
+.slick-next:after {
+    font: 40px/1 'ionicons';
+    content: "\f3d1";
+}
+.event-card {
+    padding: 10px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}	

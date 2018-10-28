@@ -16,3 +16,45 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require jquery.slick
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+$(document).ready(function() {
+	$('.sliderMain').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    asNavFor: '.sliderSidebar',
+    autoplay: false,
+    autoplaySpeed: 3500
+  });
+  $('.sliderSidebar').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.sliderMain',
+    dots: true,
+    centerMode: false,
+    focusOnSelect: true,
+    vertical: true,
+    arrows: true
+  });
+  $('.sliderMain').on('afterChange', function(event, slick, currentSlide) {
+    if (currentSlide == 5) {
+      $('.sliderMain').slick('slickPause');
+      theVideo.play();
+      $('.sliderMain').on('beforeChange', function(event, slick, currentSlide, nextSlide)
+        {
+            theVideo.pause(); 
+        });
+    }
+  });
+
+  document.getElementById('theVideo').addEventListener('ended', myHandler, false);
+
+  function myHandler(e) {
+    $('.sliderMain').slick('slickPlay');
+  }
+});
