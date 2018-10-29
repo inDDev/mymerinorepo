@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_105555) do
+ActiveRecord::Schema.define(version: 2018_10_29_174042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,9 +49,20 @@ ActiveRecord::Schema.define(version: 2018_10_28_105555) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_families", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_featured_on_home"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_product_families_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
+  add_foreign_key "product_families", "products"
 end
