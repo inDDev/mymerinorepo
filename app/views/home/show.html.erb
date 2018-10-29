@@ -85,24 +85,24 @@
 <% end %>
 </div>
 
-<h4 align="center">HPL Based Products</h4>
-<div class="col-8 container" style="height: 350px;">
-  <ul class="list-unstyled row">
-	<% @products.each do |product| %>
-    	<li class="list-item col-2 border-top border-bottom py-2"><%= product.name %></li>
-    <% end %>
-  </ul>
+<div class="product-grid">
+	<div class="col-8 container border border-secondary" padding="50px">
+		<h4 align="center">HPL Based Products</h4>
+		  <ul class="list-unstyled row">
+			<% @products.each do |product| %>
+		    	<li class="list-item col-2 border-top border-bottom py-2"><%= product.name %></li>
+		    <% end %>
+		  </ul>
+	</div>
+	<br>
+	<br>	
+	<div class="col-8 container border border-secondary" padding="50px">
+		<h4 align="center">Compacts Based Products</h4>
+			<% @products.each do |product, i| %>
+				<%= product.name %>
+		    <% end %>
+	</div>
 </div>
-<h4 align="center">Compacts Based Products</h4>
-<div class="col-8 container" style="height: 350px;">
-  <ul class="list-unstyled row">
-	<% @products.each do |product| %>
-    	<li class="list-item col-2 border-top border-bottom py-2"><%= product.name %></li>
-    <% end %>
-  </ul>
-
-</div>
-
 
 <h1>Home#show</h1>
 <p>Find me in app/views/home/show.html.erb</p>
