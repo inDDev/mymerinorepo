@@ -77,6 +77,13 @@
 	</div>
 </div>
 
+<div class="list-group">
+<% @events.each do |event| %>
+	<h3><%= event.title %></h3>
+	<a class= "list-group-item list-group-item-action" href="<%= event.url %>">Image Link</a>
+<% end %>
+</div>
+
 
 <h1>Home#show</h1>
 <p>Find me in app/views/home/show.html.erb</p>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
-  get 'event/show'
+  get 'events/show'
   get 'home/show'
   root 'home#show'
-  resources :events
+  resources :events, :only => [:show, :index]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
