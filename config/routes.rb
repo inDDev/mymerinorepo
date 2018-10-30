@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'downloads/show'
+  get 'projects/show'
+  get 'courses/show'
+  get 'quotes/show'
   get 'events/show'
   get 'events/index'
   get 'home/show'
