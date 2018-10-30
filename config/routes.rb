@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'academies/show'
   get 'products/show'
   get 'downloads/show'
   get 'projects/show'
