@@ -8,7 +8,14 @@
 @brandbar-second: #EB977D;
 @brandbar-third: #F5CFBC;
 
-
+.navbar-nav > li{
+  margin-left:10px;
+  margin-right:10px;
+  text-align:center;
+}
+.form-inline {
+    margin-right: 30px;
+}
 .navbar-logo-img {
 	height: 100px !important;
   	width: auto;	
