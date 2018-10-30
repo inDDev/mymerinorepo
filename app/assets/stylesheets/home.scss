@@ -20,6 +20,24 @@
 	height: 100px !important;
   	width: auto;	
 }
+.table {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto
+}
+.product-grid {
+    background-color: blanchedalmond;  
+       
+}
+
+.grid-subtext {
+    padding: 30px 350px;
+}
+.grid-subtext-ul {
+    display:-moz-inline-stack;
+    display:inline-block;
+    zoom:1;
+    *display:inline;
+}
 
 #slideBox {
 	width: fit-content;
