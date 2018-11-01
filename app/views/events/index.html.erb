@@ -1,4 +1,24 @@
+<%= render 'layouts/navigation' %>
+
+<div class="jumbotron">
+  <h1 class="display-4">Keep updated on all the latest events!</h1>
+  <p class="lead">Welcome to MyMerino Portal.</p>
+  <hr class="my-4">
+  <p>Your new home for- Product related information, Training, Certifications, Company Events and so much more! Click below to learn more about My Merino</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+
+
 <% @events.each do |event| %>
 	<h3><%= event.title %></h3>
 	<a class= "list-group-item list-group-item-action" href="<%= event.url %>">Image Link</a>
 <% end %>
+<hr>
+
+<% @events.each do |event| %>
+<div class="well">
+	<h3><%= event.title  %></h3>
+	<p><%= event.url %></p>
+	<%= link_to "Read More", event_path(event), :class =>'btn-primary' %>
+	<% end %>
+</div>

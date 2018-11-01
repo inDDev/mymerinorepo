@@ -8,10 +8,10 @@
 <%= render 'layouts/navigation' %>
 
 <div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <h1 class="display-4">Hello, Dear Merino Family Member!</h1>
+  <p class="lead">Welcome to MyMerino Portal.</p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p>Your new home for- Product related information, Training, Certifications, Company Events and so much more! Click below to learn more about My Merino</p>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 
@@ -47,14 +47,7 @@
 	</div>
 </div>
 
-<div class="list-group">
-<% @events.each do |event| %>
-	<h3><%= event.title %></h3>
-	<a class= "list-group-item list-group-item-action" href="<%= event.url %>">Open in New Tab</a>
-	<img class="img-responsive" width="304" height="236" src="<%=raw event.url %>">
-<% end %>
-</div>
-
+<h3 align="center">Whats new: from our Product Database</h3>
 <div class="product-grid">
 	<div class="col-8 container border border-secondary" padding="50px">
 		<h4 align="center">HPL Based Products</h4>
