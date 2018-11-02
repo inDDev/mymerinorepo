@@ -1,0 +1,11 @@
+<%= render 'layouts/navigation' %>
+
+<% @downloads.each do |d| %>
+	<%= d.name %><br>
+	<%= d.url %><br>
+	<%= d.category.name %><br>
+	HI!<hr>
+<% end %>
+
+<h1>Downloads#index</h1>
+<p>Find me in app/views/downloads/index.html.erb</p>

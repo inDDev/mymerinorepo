@@ -1,5 +1,10 @@
 class DownloadsController < ApplicationController
-  def show
-  	@downloads = Download.all
+  def index
+  	@downloads = Download.order(:name)
   end
+
+  def show 
+  	@download = Download.find(params[:id])
+  end
+
 end
