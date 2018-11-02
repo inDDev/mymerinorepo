@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_130931) do
+ActiveRecord::Schema.define(version: 2018_11_02_115221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 2018_11_01_130931) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -56,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_11_01_130931) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_downloads_on_category_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -96,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_11_01_130931) do
     t.text "background"
   end
 
+  add_foreign_key "downloads", "categories"
   add_foreign_key "product_families", "products"
   add_foreign_key "products", "product_families"
 end
