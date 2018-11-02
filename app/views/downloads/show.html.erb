@@ -1,9 +1,4 @@
 <%= render 'layouts/navigation' %>
 	<%= @download.name %><br>
-	<%= @download.url %><hr>
-
-
-<%= form_for @download do |f| %>
-	<%= f.text_field :name %>
-<% end %>
+	<%= @download.category.name %><br>	
 

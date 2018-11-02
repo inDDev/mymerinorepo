@@ -3,21 +3,24 @@
 <div class="downloads-selection-area">
 <p>What kind of download are you looking for?</p>
 <%= form_tag downloads_path, :method => 'get' do %>
-	<%= collection_select :download, :category_id, Category.all, :id, :name %>
-	<%= submit_tag "look" %>
+	<%= collection_select :download, :category_id, Category.all, :id, :name, prompt: true %>
+	<%= submit_tag "Filter" %>
 <% end %>
 </div>
 <div class="filtered-files-area">
-	Downloads as per your current selection:-
+	Downloads as per your current selection:-<br>
+	<% @downloads.each do |download| %>
+		<%= download.category.name %> <br>
+	<% end %>
 <hr>
+</div>
 
 <hr>
 <p><strong>All downloads:-</strong></p>
 <% @downloads.each do |d| %>
 	<%= d.name %><br>
-	<%= d.url %><br>
 	<%= d.category.name %><br>
-	HI!<hr>
+	<hr>
 <% end %>
 
 <%= params.inspect %>
